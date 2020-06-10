@@ -7,14 +7,14 @@ import numpy
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from mpl_toolkits.mplot3d import Axes3D
-
-
-
+import sklearn
+from sklearn import datasets
+import numpy as np
 
 
 n=2000
 def load_data(n):
-    swiss_roll =datasets.make_swiss_roll(n_samples=n)
+    swiss_roll =sklearn.datasets.make_swiss_roll(n_samples=n)
     return swiss_roll[0],np.floor(swiss_roll[1])
 
 X,Y=load_data(n)
@@ -88,7 +88,6 @@ fig = plt.figure('data')
 ax = Axes3D(fig)
 ax.scatter(X[:, 0], X[:, 1], X[:, 2],marker=',',c=Y)
 plt.show()
-
 
 
 
