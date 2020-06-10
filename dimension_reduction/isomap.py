@@ -9,10 +9,10 @@ from sklearn.decomposition import PCA
 from mpl_toolkits.mplot3d import Axes3D
 
 from queue import  PriorityQueue as p
+from sklearn import datasets
 
 
-
-n=1000
+n=500
 def load_data(n):
     swiss_roll =datasets.make_swiss_roll(n_samples=n)
     return swiss_roll[0],np.floor(swiss_roll[1])
@@ -134,14 +134,13 @@ ax.scatter(X[:, 0], X[:, 1], X[:, 2],marker=',',c=Y)
 plt.show()
 
 
+plt.scatter(reduce[:,0],reduce[:,1],c=Y)
+plt.show()
 
-
-
-
-
-
-
-
+fig = plt.figure('data')
+ax = Axes3D(fig)
+ax.scatter(X[:, 0], X[:, 1], X[:, 2],marker=',',c=Y)
+plt.show()
 
 
 
