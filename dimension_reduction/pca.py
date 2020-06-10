@@ -1,4 +1,3 @@
-#Plot3D[(x + 2*y - 7)^2 + (2*x + y - 5)^2, {x, -5, 5}, {y, -5, 5}]
 import numpy
 import matplotlib.pyplot as plt
 
@@ -23,15 +22,14 @@ plt.scatter(data[0],data[1],marker='^',c='blue')
 cov = data.dot(data.T)
 
 val,vec = numpy.linalg.eigh(cov.T)
-axes = vec[1]
 
-axes=axes.reshape((1,2))
+axes=vec[1]
 
-print(val)
-print(vec)
- 
-tt=axes.dot(data)
-recover = axes.T.dot(tt)
+
+axes=axes.reshape(1,2)
+
+recover = axes.T.dot(axes).dot(data)
 plt.scatter(recover[0],recover[1],marker='o',c='red')
 
 plt.show()
+           
