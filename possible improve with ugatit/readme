@@ -1,1 +1,1 @@
-combine the scconv from bytedance and ugatit. The generator loss decrease much faster. And it seems to be more robust.
+combine the scconv from bytedance and ugatit. The generator loss decrease much faster. And it seems to be more robust(in the early stage). Modification is in the siren.py and networks.py.
